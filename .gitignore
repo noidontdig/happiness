@@ -1,0 +1,14 @@
+# ignore the defautl SQLite database
+/db/*.sqlite3
+
+# ignore all logfiles and tempfiles
+/tmp
+/log/*.log
+
+# ignore all swap files
+*.swp
+*.swo
+
+# ignore sublime text project files
+*.sublime-project
+*.sublime-workspace
