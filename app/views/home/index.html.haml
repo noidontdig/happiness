@@ -1,2 +1,6 @@
 %h1 Welcome to Happiness
-%p Find me in app/views/home/index.html.haml
+
+- @tweets.each do |t|
+  .tweet
+    %strong= "@#{t.from_user}:"
+    = t.text
