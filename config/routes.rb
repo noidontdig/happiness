@@ -1,5 +1,9 @@
 Happiness::Application.routes.draw do
   
-  root :to => "home#index"
+  resources :users
 
+
+  root :to => "home#index"
+  match "/logout" => "sessions#destroy", :as => :logout
+  match "/auth/:provider/callback" => "sessions#create"
 end
