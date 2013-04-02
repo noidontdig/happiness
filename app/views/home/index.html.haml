@@ -1,18 +1,20 @@
-%h1 Welcome to Happiness
+.container
+  .content
+    %h1 What are you thankful for?
 
-- @tweets.each do |t|
-  .tweet
-    %strong= "@#{t.from_user}:"
-    = t.text
+    - @tweets.each do |t|
+      .tweet
+        %strong= "@#{t.from_user}:"
+        = t.text
 
 
-#flash
-  - flash.each do |name, msg|
-    = "Alert: #{msg}"
+    #flash
+      - flash.each do |name, msg|
+        = "Alert: #{msg}"
 
-#user_nav
-  - if current_user
-    = link_to "[logout]", logout_path
-    #{current_user.nickname}
-  - else
-    = link_to "Sign in with Twitter", "/auth/twitter"
+    #user_nav
+      - if current_user
+        = link_to "[logout]", logout_path
+        #{current_user.nickname}
+      - else
+        = link_to "Sign in with Twitter", "/auth/twitter"
