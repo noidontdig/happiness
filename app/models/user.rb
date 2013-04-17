@@ -1,13 +1,17 @@
 class User < ActiveRecord::Base
   attr_accessible :name, :nickname, :secret, :token, :uid
 
-  def self.create_with_omniauth(auth)
-    create! do |user|
-      user.uid = auth["uid"]
-      user.name = auth["info"]["name"]
-      user.nickname = auth["info"]["nickname"]
-      user.token = auth["credentials"]["token"]
-      user.secret = auth["credentials"]["secret"]
-    end
+  def self.from_omniauth(auth)
+    User.find_by_uid(auth["uid"]) || new_from_omniauth(auth)
+  end
+
+  def self.new_from_omniauth(auth)
+    User.new(
+      uid: auth["uid"],
+      name: auth["info"]["name"],
+      nickname: auth["info"]["nickname"],
+      token: auth["credentials"]["token"],
+      secret: auth["credentials"]["secret"]
+    )
   end
 end
