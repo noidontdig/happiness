@@ -1,12 +1,8 @@
 .container.space
   .content
-    %h1 
+    %h2 
       = "Welcome, #{@user.name}"
 
     %p.last_step One last step!
 
     = render 'form'
-
-    = link_to 'Show', @user
-    \|
-    = link_to 'Back', users_path

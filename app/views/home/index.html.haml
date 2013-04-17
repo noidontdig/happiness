@@ -1,17 +1,18 @@
 .container.space
   .content
     %p#notice= notice
-      
+
     %h1 What are you thankful for?
 
     - @tweets.each do |t|
       .tweet
         %strong= "@#{t.from_user}:"
         = t.text
-        
-#cbp-qtrotator.cbp-qtrotator
-  - @tweets.each do |t|
-    .cbp-qtcontent
-      %blockquote
-        %p= t.text
-        %footer= t.from_user
+
+-#      
+  #cbp-qtrotator.cbp-qtrotator
+    - @tweets.each do |t|
+      .cbp-qtcontent
+        %blockquote
+          %p= t.text
+          %footer= t.from_user
