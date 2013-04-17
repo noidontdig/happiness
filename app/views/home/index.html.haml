@@ -4,10 +4,11 @@
 
     %h1 What are you thankful for?
 
-    - @tweets.each do |t|
-      .tweet
-        %strong= "@#{t.from_user}:"
-        = t.text
+    .tweets
+      - @tweets.each do |t|
+        .tweet
+          %strong= "@#{t.from_user}:"
+          = t.text
 
 -#      
   #cbp-qtrotator.cbp-qtrotator
