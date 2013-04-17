@@ -1,6 +1,6 @@
 $(document).ready(function(){
   function fadeContent() {
-    $(".tweets .tweet:hidden:first").fadeIn(500).delay(2000).fadeOut(500, function() {
+    $(".home_tweets .tweet:hidden:first").fadeIn(2000).delay(6000).fadeOut(2000, function() {
       $(this).appendTo($(this).parent());
       fadeContent();
     });

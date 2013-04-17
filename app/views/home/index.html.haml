@@ -2,13 +2,17 @@
   .content
     %p#notice= notice
 
-    %h1 What are you thankful for?
+    .head 
+      %span What are you 
+      %span.thankful #thankful 
+      %span for?
 
-    .tweets
+    .home_tweets
       - @tweets.each do |t|
         .tweet
-          %strong= "@#{t.from_user}:"
-          = t.text
+          %blockquote
+            %p= t.text
+            %footer= "- @#{t.from_user}"
 
 -#      
   #cbp-qtrotator.cbp-qtrotator
