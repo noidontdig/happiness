@@ -1,0 +1,15 @@
+.navbar.navbar-inverse.navbar-fixed-top
+  .navbar-inner
+    .container
+      %a.brand{ href: '/' }thankfully
+      %ul.nav{ style: "float: right; right: 0" }
+        %li= link_to "Home", root_url
+        %li 
+          %a About
+        - if current_user
+          %li= link_to "My tweets", user_url(current_user)
+        %li
+          - if current_user
+            %a{ href: "/logout" } Sign out
+          - else  
+            %a{ href: "/auth/twitter" } Sign in

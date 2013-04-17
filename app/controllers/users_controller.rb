@@ -14,7 +14,11 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-
+    @tweets = []
+    query = "from:#{@user.nickname} #thankful"
+    Twitter.search(query).results.map do |result|
+      @tweets << result
+    end
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
@@ -60,7 +64,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to root_url, notice: 'Start tweeting #thankful!' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

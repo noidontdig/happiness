@@ -1,21 +1,8 @@
-%p#notice= notice
+.container.space
+  .content
+    %p#notice= notice
 
-%p
-  %b Uid:
-  = @user.uid
-%p
-  %b Name:
-  = @user.name
-%p
-  %b Nickname:
-  = @user.nickname
-%p
-  %b Token:
-  = @user.token
-%p
-  %b Secret:
-  = @user.secret
+    %h3= "@#{@user.nickname}'s #thankful tweets"
 
-= link_to 'Edit', edit_user_path(@user)
-\|
-= link_to 'Back', users_path
+    - @tweets.each do |t|
+      %p= t.text

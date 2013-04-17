@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :nickname, :secret, :token, :uid
+  attr_accessible :name, :nickname, :secret, :token, :uid, :email
 
   def self.from_omniauth(auth)
     User.find_by_uid(auth["uid"]) || new_from_omniauth(auth)

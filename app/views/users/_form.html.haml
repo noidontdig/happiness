@@ -7,19 +7,7 @@
           %li= msg
 
   .field
-    = f.label :uid
-    = f.text_field :uid
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :nickname
-    = f.text_field :nickname
-  .field
-    = f.label :token
-    = f.text_field :token
-  .field
-    = f.label :secret
-    = f.text_field :secret
+    = f.text_field :email, placeholder: "Please enter your email"
+  
   .actions
     = f.submit 'Save'

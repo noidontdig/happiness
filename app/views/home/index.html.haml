@@ -1,20 +1,17 @@
-.container
+.container.space
   .content
+    %p#notice= notice
+      
     %h1 What are you thankful for?
 
     - @tweets.each do |t|
       .tweet
         %strong= "@#{t.from_user}:"
         = t.text
-
-
-    #flash
-      - flash.each do |name, msg|
-        = "Alert: #{msg}"
-
-    #user_nav
-      - if current_user
-        = link_to "[logout]", logout_path
-        #{current_user.nickname}
-      - else
-        = link_to "Sign in with Twitter", "/auth/twitter"
+        
+#cbp-qtrotator.cbp-qtrotator
+  - @tweets.each do |t|
+    .cbp-qtcontent
+      %blockquote
+        %p= t.text
+        %footer= t.from_user

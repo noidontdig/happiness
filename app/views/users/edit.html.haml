@@ -1,6 +1,9 @@
-.container
+.container.space
   .content
-    %h1 Editing user
+    %h1 
+      = "Welcome, #{@user.name}"
+
+    %p.last_step One last step!
 
     = render 'form'
 
