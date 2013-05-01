@@ -14,22 +14,22 @@
         %h3 who?
         .profiles
           .profile.span2.no-margin
-            .face= image_tag "jon.jpg"
+            .face= link_to image_tag("jon.jpg"), "http://twitter.com/jonli"
             .name Jon Li
             .nickname= link_to "@jonli", "http://twitter.com/jonli"
             %p Content
           .profile.span2
-            .face= image_tag "grace.jpeg"
+            .face= link_to image_tag("grace.jpeg"), "http://twitter"
             .name Grace Oh
             .nickname= link_to "@hello_graceoh", "http://twitter.com/hello_graceoh"
             %p Community
           .profile.span2
-            .face= image_tag "yellow.jpg"
+            .face= link_to image_tag("yellow.jpg"), "http://twitter.com/alexqin"
             .name Alexandra Qin
             .nickname= link_to "@alexqin", "http://twitter.com/alexqin"
             %p Engineering
           .profile.span2
-            .face= image_tag "tobias.jpg"
+            .face= link_to image_tag("tobias.jpg"), "http://twitter.com/wong_tobias"
             .name Tobias Wong
             .nickname= link_to "@wong_tobias", "http://twitter.com/wong_tobias"
             %p Product
