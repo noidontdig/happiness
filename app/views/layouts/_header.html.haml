@@ -5,7 +5,7 @@
       %ul.nav{ style: "float: right; right: 0" }
         %li= link_to "Home", root_url
         %li 
-          %a About
+          %a{ href: "/about" } About
         - if current_user
           %li= link_to "My tweets", user_url(current_user)
         %li
