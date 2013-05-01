@@ -14,11 +14,8 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-    @tweets = []
-    query = "from:#{@user.nickname} #thankful"
-    Twitter.search(query).results.map do |result|
-      @tweets << result
-    end
+    @tweets = @user.tweets
+    @tweet_cloud = @user.tweet_cloud
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }

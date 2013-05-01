@@ -1,8 +1,30 @@
 .container
   .content
-    %p#notice= notice
+    .row
+      .span8
+        %p#notice= notice
 
-    %h3= "@#{@user.nickname}'s #thankful tweets"
+        %h3= "@#{@user.nickname}'s #thankful tweets"
 
-    - @tweets.each do |t|
-      %p= t.text
+        %h4 In the past week:
+
+        - timetweets = Hash.new{ |h,k| h[k] = [] }
+        - @tweets.each do |t|
+          - timetweets[t.time.strftime("%A, %b %d")] << t
+
+        - timetweets.each_pair do |date, tweets|
+          %p
+            %strong= date
+          - tweets.each do |t|
+            %p= t.text
+
+        %h4 Most #thankful words:
+
+        - @tweet_cloud.first(5).each do |word|
+          %p= word[0]
+
+        %h4 Most #thankful day of the week:
+
+        %h4 Most #thankful time of the day:
+
+
