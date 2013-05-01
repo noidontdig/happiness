@@ -16,4 +16,15 @@ class User < ActiveRecord::Base
       secret: auth["credentials"]["secret"]
     )
   end
+
+  def self.grab_tweets
+    User.all.each do |user|
+      results = []
+      query = "from:#{user.nickname} #thankful"
+      tweets = Twitter.search(query).results
+      tweets.each do |t|
+        Tweet.find_or_create_by_t_id(t_id: t[:id], user_id: user.id, text: t[:text], time: t[:created_at])
+      end
+    end
+  end
 end
