@@ -10,7 +10,7 @@
 
         - timetweets = Hash.new{ |h,k| h[k] = [] }
         - @tweets.each do |t|
-          - timetweets[t.time.strftime("%A, %b %d")] << t
+          - timetweets[t.time.in_time_zone('Eastern Time (US & Canada)').strftime("%A, %b %d")] << t
 
         - timetweets.each_pair do |date, tweets|
           %p

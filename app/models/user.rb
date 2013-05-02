@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
       tweet_str << tweet.text << " " 
     end
     words = tweet_str.split
-    words.map!{|c| c.downcase.singularize.strip}
+    words.map!{|c| c.downcase.strip}
     words.map!{|c| c.gsub(/[^a-z0-9\-]/,'') }
     word_counts = Hash.new(0)
     words.each do |word|
