@@ -1,25 +1,30 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$orange: #FF6600
+
+.navbar-inverse
+  .navbar-inner
+    background-image: linear-gradient(to bottom, #452900, #000)
+
 .content
   padding-top: 70px
-  // font-family: 'Raleway', sans-serif
 .head
   padding-top: 200px
   font-size: 48px
   font-weight: bold
   .thankful
-    color: orange
+    color: $orange
 
 .orange
-  color: orange
+  color: $orange
 
 .home_tweets
   padding-top: 64px
   .tweet
     display: none
     blockquote
-      border-left: 5px solid #ffd4aa
+      border-left: 5px solid #FFC6AA
     p
       font-size: 24px
       line-height: 48px
@@ -27,6 +32,7 @@
       font-size: 16px
       font-style: italic
       float: right
+      padding-right: 10px
       color: #888
 
 .profiles
