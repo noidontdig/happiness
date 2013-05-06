@@ -35,6 +35,21 @@ a {
   }
 }
 
+.content {
+  a {
+    color: $orange;
+    &:visited {
+      color: $orange;
+    }
+    &:hover {
+      color: $orange;
+      text-decoration: none;
+      border-bottom: 1px dotted $orange;
+      background-color: $background;
+    }
+  }
+}
+
 div {
   &.field, &.actions {
     margin-bottom: 10px;
