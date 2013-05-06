@@ -2,24 +2,18 @@
   .content
     %p#notice= notice
 
+  .row
+    .span9
+      .head 
+        %span What are you 
+        %span.thankful #thankful 
+        %span for?
+      
     .row
-      .span12
-        .head 
-          %span What are you 
-          %span.thankful #thankful 
-          %span for?
-    .row
-      .span8.offset2
+      .span7.offset2
         .home_tweets
           - @tweets.each do |t|
             .tweet
               %blockquote
                 %p= t.text
                 %footer= "- @#{t.from_user}"
--#      
-  #cbp-qtrotator.cbp-qtrotator
-    - @tweets.each do |t|
-      .cbp-qtcontent
-        %blockquote
-          %p= t.text
-          %footer= t.from_user
