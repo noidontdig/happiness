@@ -6,6 +6,7 @@
         %li= link_to "Home", root_url
         %li 
           %a{ href: "/about" } About
+        %li= link_to "Statistics", tweets_url
         - if current_user
           %li= link_to "My tweets", user_url(current_user)
         %li
