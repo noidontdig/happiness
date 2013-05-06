@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @tweets = User.all
+    @tweets = Tweet.all
     @tweet_cloud = Tweet.tweet_cloud
     respond_to do |format|
       format.html # index.html.erb
