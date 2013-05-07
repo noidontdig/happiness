@@ -3,11 +3,11 @@ class Tweet < ActiveRecord::Base
 
   belongs_to :user
 
-  def self.tweet_cloud
+  def self.tweet_cloud(tweets)
     common_words = File.open('lib/common_words.txt','r').read.encode!('UTF-8','UTF-8', :invalid => :replace).split("\n")
     tweet_str = ""
-    Tweet.all.each do |tweet|
-      tweet_str << tweet.text << " " 
+    tweets.each do |tweet|
+      tweet_str << tweet[:text] << " " 
     end
     words = tweet_str.split
     words.map!{|c| c.downcase.strip}

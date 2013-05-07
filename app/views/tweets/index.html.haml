@@ -4,12 +4,13 @@
       .span8
         %p#notice= notice
 
-        %h3= "All #thankful tweets"
+        %h3= "All recent #thankful tweets"
         
         %h4 Most #thankful words:
 
-        - @tweet_cloud.first(5).each do |word|
-          %p= word[0]
+        %ol
+          - @tweet_cloud.first(10).each do |word|
+            %li= word[0]
 
         %h4 Most #thankful day of the week:
 
