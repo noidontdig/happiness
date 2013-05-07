@@ -9,23 +9,6 @@ $text: #452900
   .navbar-inner
     background-image: linear-gradient(to bottom, #452900, #000)
 
-.btn-custom
-  border: 1px solid #000
-  background-color: hsl(30, 100%, 55%) !important
-  background-repeat: repeat-x
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffb56b", endColorstr="#ff8c19")
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#ffb56b), to(#ff8c19))
-  background-image: -moz-linear-gradient(top, #ffb56b, #ff8c19)
-  background-image: -ms-linear-gradient(top, #ffb56b, #ff8c19)
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffb56b), color-stop(100%, #ff8c19))
-  background-image: -webkit-linear-gradient(top, #ffb56b, #ff8c19)
-  background-image: -o-linear-gradient(top, #ffb56b, #ff8c19)
-  background-image: linear-gradient(#ffb56b, #ff8c19)
-  border-color: #ff8c19 #ff8c19 hsl(30, 100%, 51%)
-  color: white
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.26)
-  -webkit-font-smoothing: antialiased
-
 .content
   padding-top: 70px
 .head
@@ -53,13 +36,6 @@ $text: #452900
       float: right
       padding-right: 10px
       color: #888
-
-.bird
-  opacity: 0.07
-  height: auto
-  position: fixed
-  right: 0
-  bottom: 0
 
 .profiles
   list-style-type: none
@@ -96,3 +72,23 @@ $text: #452900
         border-bottom: 1px dotted $orange
   .no-margin
     margin-left: 0
+
+
+.bird
+  opacity: 0.07
+  height: auto
+  position: fixed
+  right: 0
+  bottom: 0
+  z-index: 0
+
+.footer
+  z-index: 2
+  position: fixed
+  right: 0
+  bottom: 0
+  padding: 20px
+  font-size: 16px
+  line-height: 1.5em
+  .line
+    text-align: right
