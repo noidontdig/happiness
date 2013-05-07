@@ -16,6 +16,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @tweets = @user.tweets
     @tweet_cloud = Tweet.tweet_cloud(@tweets)
+    @most_thankful_day = @user.most_thankful_day
+    @most_thankful_time = @user.most_thankful_time
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }

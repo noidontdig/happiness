@@ -6,8 +6,4 @@ class HomeController < ApplicationController
       @tweets << result
     end
   end
-
-  def about
-
-  end
 end

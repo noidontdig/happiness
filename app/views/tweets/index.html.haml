@@ -4,16 +4,30 @@
       .span8
         %p#notice= notice
 
-        %h3= "All recent #thankful tweets"
-        
-        %h4 Most #thankful words:
+        %h3
+          All recent 
+          %span.orange #thankful 
+          tweets
+    .row
+      .span4
+        %h4 
+          Most 
+          %span.orange #thankful 
+          words:
 
         %ol
           - @tweet_cloud.first(10).each do |word|
             %li= word[0]
 
-        %h4 Most #thankful day of the week:
+      .span6.offset1
+        %h4.search 
+          %span.orange #thankful 
+          tweets mentioning:
+        
+        = form_tag("/tweets", method: "get") do
+          = text_field_tag "mention", nil, placeholder: "@justinbieber", class: "search-form"
 
-        %h4 Most #thankful time of the day:
-
-        %h4 #thankful tweets mentioning @justinbieber:
+        - @mention.each do |tweet|
+          %p  
+            %strong= "@#{tweet[:from_user]}:"
+            = tweet[:text]

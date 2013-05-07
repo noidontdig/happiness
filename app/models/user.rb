@@ -27,4 +27,20 @@ class User < ActiveRecord::Base
       end
     end
   end
+
+  def most_thankful_day
+    days = Hash.new(0)
+    self.tweets.each do |tweet|
+      days[tweet.time.in_time_zone('Eastern Time (US & Canada)').strftime("%A")] += 1     
+    end
+    days.sort_by{ |day,count| count }.last
+  end
+
+  def most_thankful_time
+    times = Hash.new(0)
+    self.tweets.each do |tweet|
+      times[tweet.time.in_time_zone('Eastern Time (US & Canada)').strftime("%l %p")] += 1     
+    end
+    times.sort_by{ |time,count| count }.last
+  end
 end
