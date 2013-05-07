@@ -9,17 +9,7 @@
           %span.orange #thankful 
           tweets
     .row
-      .span4
-        %h4 
-          Most 
-          %span.orange #thankful 
-          words:
-
-        %ol
-          - @tweet_cloud.first(10).each do |word|
-            %li= word[0]
-
-      .span6.offset1
+      .span6
         %h4.search 
           %span.orange #thankful 
           tweets mentioning:
@@ -31,3 +21,12 @@
           %p  
             %strong= "@#{tweet[:from_user]}:"
             = tweet[:text]
+      .span4.offset1
+        %h4 
+          Most 
+          %span.orange #thankful 
+          words:
+
+        %ol
+          - @tweet_cloud.first(10).each do |word|
+            %li= word[0]
