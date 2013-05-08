@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
     )
   end
 
+  def past_week_tweets
+    self.tweets.select{ |t| Date.today - t.time.in_time_zone('Eastern Time (US & Canada)').to_date < 7 }.reverse
+  end
+
   def self.grab_tweets
     User.all.each do |user|
       results = []
