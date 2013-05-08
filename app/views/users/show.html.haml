@@ -27,21 +27,24 @@
           %span.orange #thankful 
           words:
 
-        %ol
-          - @tweet_cloud.first(5).each do |word|
-            %li= word[0]
+        - if @tweet_cloud
+          %ol
+            - @tweet_cloud.first(5).each do |word|
+              %li= word[0]
 
         %h4 
           Most 
           %span.orange #thankful 
           day of the week:
 
-        %p= @most_thankful_day[0]
+        - if @most_thankful_day
+          %p= @most_thankful_day[0]
 
         %h4 
           Most 
           %span.orange #thankful 
           time of the day:
 
-        %p= @most_thankful_time[0]
+        - if @most_thankful_time
+          %p= @most_thankful_time[0]
 

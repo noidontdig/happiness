@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-    @tweets = @user.tweets
+    @tweets = @user.tweets.select{ |t| Time.now - t.time <= 7.days }.reverse
     @tweet_cloud = Tweet.tweet_cloud(@tweets)
     @most_thankful_day = @user.most_thankful_day
     @most_thankful_time = @user.most_thankful_time
