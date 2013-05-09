@@ -8,7 +8,7 @@
           %span.orange #thankful 
           tweets
     .row
-      .span4
+      .span6
         %h4 In the past week:
 
         - timetweets = Hash.new{ |h,k| h[k] = [] }
@@ -21,7 +21,7 @@
           - tweets.each do |t|
             %p= t.text
 
-      .span4.offset2
+      .span4.offset1
         %h4 
           Most 
           %span.orange #thankful 
